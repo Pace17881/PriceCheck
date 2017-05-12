@@ -29,6 +29,7 @@ public class InputView
 	private Button removeBtn;
 	private Button details;
 	private Button mailBtn;
+	private Button configBtn;
 
 	private HBox hBBtn;
 
@@ -51,6 +52,7 @@ public class InputView
 		chooseCB = new ComboBox<>();
 		chooseCB.setMinWidth(width);
 		chooseCB.setMaxWidth(width);
+		// chooseCB.setDisable(true);
 		grid.add(chooseCB, 1, 1);
 
 		priceWish = new TextField("0,00");
@@ -63,6 +65,7 @@ public class InputView
 		removeBtn.setDisable(true);
 		details = new Button("Details...");
 		mailBtn = new Button("Mail...");
+		configBtn = new Button("Configuration");
 
 		hBBtn = new HBox(10);
 		hBBtn.setAlignment(Pos.BOTTOM_RIGHT);
@@ -70,6 +73,7 @@ public class InputView
 		hBBtn.getChildren().add(removeBtn);
 		hBBtn.getChildren().add(mailBtn);
 		hBBtn.getChildren().add(details);
+		hBBtn.getChildren().add(configBtn);
 		grid.add(hBBtn, 1, 3);
 
 		info = new Label();
@@ -124,5 +128,10 @@ public class InputView
 	public TextField getPriceWish()
 	{
 		return priceWish;
+	}
+
+	public Button getConfigBtn()
+	{
+		return configBtn;
 	}
 }

@@ -45,6 +45,12 @@ public class ModelBean
 		return products;
 	}
 
+	public long getTimerDefault()
+	{
+		IntervalObserver iObserver = IntervalObserver.getInstance();
+		return iObserver.getTimerDefault();
+	}
+
 	public void setProducts(ObservableList<Product> products)
 	{
 		this.products = products;
@@ -71,7 +77,7 @@ public class ModelBean
 				products.addListener(productInvalidationListener);
 				iObserver.setObservableProducts(products);
 
-				iObserver.setTimerDefault((int) TimeUnit.MINUTES.toMillis(30));
+				iObserver.setTimerDefault(TimeUnit.MINUTES.toMillis(30));
 				iObserver.start();
 			}
 		}

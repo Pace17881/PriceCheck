@@ -11,9 +11,9 @@ public class IntervalObserver extends Thread
 	private static IntervalObserver instance;
 
 	ObservableList<Product> products;
-	int timerHeartbeat = 5000;
-	int timerDefault = 6000;
-	int timer = 0;
+	long timerHeartbeat = 5000;
+	long timerDefault = 6000;
+	long timer = 0;
 
 	private IntervalObserver()
 	{
@@ -81,13 +81,23 @@ public class IntervalObserver extends Thread
 		System.out.println("Observation ends now...");
 	}
 
-	public void setTimerHeartbeat(int timerHeartbeat)
+	public void setTimerHeartbeat(long timerHeartbeat)
 	{
 		this.timerHeartbeat = timerHeartbeat;
 	}
 
-	public void setTimerDefault(int timerDefault)
+	public void setTimerDefault(long timerDefault)
 	{
 		this.timerDefault = timerDefault;
+	}
+
+	public long getTimerHeartbeat()
+	{
+		return timerHeartbeat;
+	}
+
+	public long getTimerDefault()
+	{
+		return timerDefault;
 	}
 }

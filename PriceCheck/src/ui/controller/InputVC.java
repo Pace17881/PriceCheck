@@ -187,6 +187,18 @@ public class InputVC extends BaseViewController
 			}
 		});
 
+		inputView.getConfigBtn().setOnAction(new EventHandler<ActionEvent>()
+		{
+
+			@Override
+			public void handle(ActionEvent event)
+			{
+				modelBean.getProductInvalidationListener().removeViewController(InputVC.this);
+				ConfigurationVC configurationVC = new ConfigurationVC(modelBean);
+				configurationVC.show();
+			}
+		});
+
 		modelBean.getProductInvalidationListener().addViewController(this);
 	}
 
